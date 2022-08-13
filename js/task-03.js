@@ -15,11 +15,9 @@ const images = [
 
 for (const image of images) {
   const galleryEl = document.querySelector(".gallery");
-  console.log(galleryEl);
 
   galleryEl.insertAdjacentHTML(
     "afterbegin",
     `<li><img src="${image.url}" alt="${image.alt}"></li>`
   );
-  console.log(galleryEl);
 }
