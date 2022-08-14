@@ -4,6 +4,8 @@ const output = document.querySelector("#name-output");
 input.addEventListener("input", newName);
 
 function newName(event) {
-  console.log(event.currentTarget.value);
   output.textContent = event.currentTarget.value;
+  if (output.textContent === "") {
+    output.textContent = "Anonymus";
+  }
 }
