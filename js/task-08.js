@@ -9,14 +9,13 @@ function callbackForm(event) {
 
   const formData = new FormData(event.currentTarget);
   formData.forEach((name, value) => {
-    console.log("name", name);
-    console.log("value", value);
+    return console.log({ name: value, value: name });
   });
 }
 
-const formElements = event.currentTarget.elements;
-const email = formElements.email.value;
-const password = formElements.password.value;
+// const formElements = event.currentTarget.elements;
+// const email = formElements.email.value;
+// const password = formElements.password.value;
 
 // email.addEventListener("blur");
 // password.addEventListener("blur");
