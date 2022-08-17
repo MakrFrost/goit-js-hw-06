@@ -1,40 +1,25 @@
-// const createButton = document.querySelector("[data-create]");
-// const destroyButton = document.querySelector("[data-destroy]");
-// const inputField = document.querySelector("#controls input");
-
-// createButton.addEventListener("click", createBoxes(inputField.value));
-// destroyButton.addEventListener("click");
-// inputField.addEventListener("click");
-
-// function createBoxes(amount) {
-//   let parentBox = document.querySelector("#boxes");
-//   let itemBox = document.createElement("div") * amount;
-//   let color = getRandomHexColor();
-//   itemBox.style.backgroundColor = color;
-//   parentBox.append(itemBox);
-// }
-
-// ! интернет
-let render = document.querySelector("[data-create]");
-let destroy = document.querySelector("[data-destroy]");
+let createBtn = document.querySelector("[data-create]");
+let destroyBtn = document.querySelector("[data-destroy]");
 let boxes = document.getElementById("boxes");
-render.addEventListener("click", getAmount);
-destroy.addEventListener("click", destroyBoxes);
 
+createBtn.addEventListener("click", getAmount);
+destroyBtn.addEventListener("click", destroyBoxes);
+
+// Достаем кол-во из инпута, и пихаем кол-во в создание боксов
 function getAmount() {
-  let amount = +document.querySelector("#controls input").value;
+  let amount = document.querySelector("#controls input").value;
   createBoxes(amount);
 }
 
 function createBoxes(amount) {
-  let basicSize = 30;
+  // задаем базовые размеры блока
+  let baseSize = 30;
+  // создаем новый фрагмент(див)
   let fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
-    let size = basicSize + i * 10;
+    let size = baseSize + i * 10;
     let div = document.createElement("div");
-    console.log(
-      (div.style.cssText = `width: ${size}px; height: ${size}px; background-color:${getRandomHexColor()}`)
-    );
+    div.style.cssText = `width: ${size}px; height: ${size}px; background-color:${getRandomHexColor()}`;
     fragment.appendChild(div);
   }
   boxes.appendChild(fragment);
