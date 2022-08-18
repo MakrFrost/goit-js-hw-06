@@ -13,11 +13,14 @@ const images = [
   },
 ];
 
-for (const image of images) {
+function addImage() {
   const galleryEl = document.querySelector(".gallery");
 
-  galleryEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src="${image.url}" alt="${image.alt}"></li>`
-  );
+  for (const image of images) {
+    galleryEl.insertAdjacentHTML(
+      "afterbegin",
+      `<li><img src="${image.url}" alt="${image.alt}"></li>`
+    );
+  }
 }
+addImage();
