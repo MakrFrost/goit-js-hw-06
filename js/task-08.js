@@ -13,5 +13,9 @@ function callbackForm(event) {
 
   if (email === "" || password === "") {
     alert("Заполните все поля!");
-  } else return console.log({ email: email, password: password });
+  } else
+    return (
+      console.log({ email: email, password: password }),
+      document.querySelector(".login-form").reset()
+    );
 }
