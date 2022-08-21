@@ -13,14 +13,38 @@ const images = [
   },
 ];
 
-function addImage() {
-  const galleryEl = document.querySelector(".gallery");
+//! 1е решение
+// function addImage() {
+//   const galleryEl = document.querySelector(".gallery");
 
-  for (const image of images) {
-    galleryEl.insertAdjacentHTML(
-      "afterbegin",
-      `<li><img src="${image.url}" alt="${image.alt}"></li>`
-    );
-  }
-}
-addImage();
+//   for (const image of images) {
+//     galleryEl.insertAdjacentHTML(
+//       "afterbegin",
+//       `<li><img src="${image.url}" alt="${image.alt}"></li>`
+//     );
+//   }
+// }
+// addImage();
+
+// ! 3е решение
+// const gallery = document.querySelector("ul#gallery");
+
+// const imagesList = ({ url, alt }) => {
+//   return `<li><img src ="${url}" alt = "${alt}"></li>`;
+// };
+// const addImg = images.map(imagesList).join("");
+// gallery.insertAdjacentHTML("afterbegin", addImg);
+
+// ! 2е решение
+// const addImg = () => {
+//   const allImages = document.querySelector("ul#gallery");
+//   for (const img of images) {
+//     allImages.insertAdjacentHTML(
+//       `afterbegin`,
+//       `<li><img src = ${img.url}
+//     alt = '${img.alt}' width="630" height="375"></li>`
+//     );
+//   }
+//   const contentStyle = document.querySelectorAll("li");
+// };
+// addImg();
