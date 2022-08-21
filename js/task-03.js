@@ -26,20 +26,11 @@ const images = [
 // }
 // addImage();
 
-// ! 3е решение
-// const gallery = document.querySelector("ul#gallery");
-
-// const imagesList = ({ url, alt }) => {
-//   return `<li><img src ="${url}" alt = "${alt}"></li>`;
-// };
-// const addImg = images.map(imagesList).join("");
-// gallery.insertAdjacentHTML("afterbegin", addImg);
-
 // ! 2е решение
 // const addImg = () => {
-//   const allImages = document.querySelector("ul#gallery");
+//   const galleryEl = document.querySelector("ul#gallery");
 //   for (const img of images) {
-//     allImages.insertAdjacentHTML(
+//     galleryEl.insertAdjacentHTML(
 //       `afterbegin`,
 //       `<li><img src = ${img.url}
 //     alt = '${img.alt}' width="630" height="375"></li>`
@@ -48,3 +39,26 @@ const images = [
 //   const contentStyle = document.querySelectorAll("li");
 // };
 // addImg();
+
+// ! 3е решение
+// const galleryEl = document.querySelector("ul#gallery");
+
+// const imagesList = ({ url, alt }) => {
+//   return `<li><img src ="${url}" alt = "${alt}"></li>`;
+// };
+// const addImg = images.map(imagesList).join("");
+// galleryEl.insertAdjacentHTML("afterbegin", addImg);
+
+// ! 4е решение
+const galleryEl = document.querySelector(".gallery");
+
+function createImg(images) {
+  return images
+    .map(({ url, alt }) => {
+      return `<li><img src="${url}" alt="${alt}" width="300"></li>`;
+    })
+    .join("");
+}
+
+const galleryImages = createImg(images);
+galleryEl.insertAdjacentHTML("beforeend", galleryImages);
